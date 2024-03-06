@@ -1,4 +1,4 @@
-# YOLOv5 🚀 by Ultralytics, AGPL-3.0 license
+# YOLOv5  by Ultralytics, AGPL-3.0 license
 """
 Train a YOLOv5 model on a custom dataset. Models and datasets download automatically from the latest YOLOv5 release.
 
@@ -24,6 +24,14 @@ import time
 from copy import deepcopy
 from datetime import datetime, timedelta
 from pathlib import Path
+
+from comet_ml import Experiment
+
+experiment = Experiment(
+  api_key="4CYbMoUD4zSfKURNeTjwOO3sY",
+  project_name="waste-finder",
+  workspace="aruthra-c"
+)
 
 try:
     import comet_ml  # must be imported before torch (if installed)
